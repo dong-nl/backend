@@ -34,6 +34,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const requestLogger = (req,rsp,next) => {
+	console.log("Method:",req.method);
+	console.log("Path:",req.path);
+	console.log("Body:",req.body);
+	console.log('---');
+	next();
+}
+
+app.use(requestLogger);
+
 app.get('/', (request, response) => {
 	response.send('<h1>Hello express<h1>');
 })
