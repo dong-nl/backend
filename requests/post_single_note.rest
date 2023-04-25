@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/notes
+Content-Type:application/json
+
+{
+	"content":"programming language is a tool,do something is more important",
+	"important":true
+}
+
+###
+GET http://localhost:3001/api/notes
